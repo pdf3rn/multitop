@@ -1,0 +1,5 @@
+# Rust build
+/target
+
+# Screenshots generados por la app en runtime
+/shots

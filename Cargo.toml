@@ -1,0 +1,13 @@
+[package]
+name = "multitop"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+crossterm = "0.29.0"
+font8x8 = "0.3.1"
+png = "0.18.1"
+sysinfo = "0.40.1"
+
+[target."cfg(unix)".dependencies]
+libc = "0.2.191"

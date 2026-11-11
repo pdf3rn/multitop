@@ -1,0 +1,304 @@
+{
+ "version": 1,
+ "values": [
+  {
+   "name": "default refresh delay",
+   "group": "timing",
+   "value": 15,
+   "unit": "tenths of a second",
+   "source": "htoprc default delay=15, Settings_new 0x38550"
+  },
+  {
+   "name": "minimum delay",
+   "group": "timing",
+   "value": 1,
+   "unit": "tenths of a second",
+   "source": "CommandLine_run 0x1d310 (-d clamp)"
+  },
+  {
+   "name": "maximum delay",
+   "group": "timing",
+   "value": 100,
+   "unit": "tenths of a second",
+   "source": "CommandLine_run 0x1d310 (-d clamp)"
+  },
+  {
+   "name": "startup second scan",
+   "group": "timing",
+   "value": 75,
+   "unit": "ms",
+   "source": "CommandLine_run 0x1d310, timespec 0x4d3f0"
+  },
+  {
+   "name": "highlight changes delay",
+   "group": "timing",
+   "value": 5,
+   "unit": "s",
+   "source": "htoprc highlight_changes_delay_secs=5"
+  },
+  {
+   "name": "percentage shadow below",
+   "group": "format",
+   "value": 0.05,
+   "unit": "%",
+   "source": "Row_printPercentage 0x2e760, const 0x47014"
+  },
+  {
+   "name": "percentage highlight at",
+   "group": "format",
+   "value": 99.9,
+   "unit": "%",
+   "source": "Row_printPercentage 0x2e760, const 0x47010"
+  },
+  {
+   "name": "rate shadow below",
+   "group": "format",
+   "value": 0.005,
+   "unit": "B/s",
+   "source": "Row_printRate 0x31650, const 0x4d320"
+  },
+  {
+   "name": "human unit step",
+   "group": "format",
+   "value": 1024,
+   "source": "Meter_humanUnit 0x28690, const 0x4d2f8"
+  },
+  {
+   "name": "human unit two decimals up to",
+   "group": "format",
+   "value": 9.99,
+   "source": "Meter_humanUnit 0x28690, const 0x4d318"
+  },
+  {
+   "name": "human unit one decimal up to",
+   "group": "format",
+   "value": 99.9,
+   "source": "Meter_humanUnit 0x28690, const 0x4d310"
+  },
+  {
+   "name": "kbytes plain below",
+   "group": "format",
+   "value": 1000,
+   "unit": "KiB",
+   "source": "Row_printKBytes 0x30b70 (0x3e7)"
+  },
+  {
+   "name": "kbytes split below",
+   "group": "format",
+   "value": 100000,
+   "unit": "KiB",
+   "source": "Row_printKBytes 0x30b70 (0x1869f)"
+  },
+  {
+   "name": "time minutes format below",
+   "group": "format",
+   "value": 360000,
+   "unit": "centiseconds",
+   "source": "Row_printTime 0x31250 (0x57e3f)"
+  },
+  {
+   "name": "time hours format below",
+   "group": "format",
+   "value": 8640000,
+   "unit": "centiseconds",
+   "source": "Row_printTime 0x31250 (0x83d5ff)"
+  },
+  {
+   "name": "time days format below",
+   "group": "format",
+   "value": 86400000,
+   "unit": "centiseconds",
+   "source": "Row_printTime 0x31250 (0x5265bff)"
+  },
+  {
+   "name": "uptime plural days from",
+   "group": "format",
+   "value": 172800,
+   "unit": "s",
+   "source": "sub_2fec0 0x2fec0 (0x2a2ff)"
+  },
+  {
+   "name": "uptime days(!) above",
+   "group": "format",
+   "value": 8726399,
+   "unit": "s",
+   "source": "sub_2fec0 0x2fec0 (0x85277f)"
+  },
+  {
+   "name": "header columns",
+   "group": "layout",
+   "value": 2,
+   "source": "sub_32480 0x32480"
+  },
+  {
+   "name": "all CPUs in one column up to",
+   "group": "layout",
+   "value": 4,
+   "unit": "cpus",
+   "source": "sub_32480 0x32480"
+  },
+  {
+   "name": "one CPU per row up to",
+   "group": "layout",
+   "value": 8,
+   "unit": "cpus",
+   "source": "sub_32480 0x32480"
+  },
+  {
+   "name": "two CPUs per row up to",
+   "group": "layout",
+   "value": 16,
+   "unit": "cpus",
+   "source": "sub_32480 0x32480"
+  },
+  {
+   "name": "four CPUs per row up to",
+   "group": "layout",
+   "value": 32,
+   "unit": "cpus",
+   "source": "sub_32480 0x32480 (0x20)"
+  },
+  {
+   "name": "eight CPUs per row up to",
+   "group": "layout",
+   "value": 128,
+   "unit": "cpus",
+   "source": "sub_32480 0x32480 (0x80)"
+  },
+  {
+   "name": "header side margin",
+   "group": "layout",
+   "value": 2,
+   "unit": "cells",
+   "source": "observed in pty capture of htop -n 3"
+  },
+  {
+   "name": "default sort column",
+   "group": "list",
+   "value": "PERCENT_CPU",
+   "source": "htoprc .sort_key, Platform_defaultScreens string 0x4c948"
+  },
+  {
+   "name": "default sort direction",
+   "group": "list",
+   "value": "descending",
+   "source": "htoprc sort_direction=-1"
+  },
+  {
+   "name": "default columns",
+   "group": "list",
+   "value": "PID USER PRIORITY NICE M_VIRT M_RESIDENT M_SHARE STATE PERCENT_CPU PERCENT_MEM TIME Command",
+   "source": "string 0x4c948"
+  },
+  {
+   "name": "io tab columns",
+   "group": "list",
+   "value": "PID USER IO_PRIORITY IO_RATE IO_READ_RATE IO_WRITE_RATE PERCENT_SWAP_DELAY PERCENT_IO_DELAY Command",
+   "source": "string 0x4c9a8"
+  },
+  {
+   "name": "hide kernel threads",
+   "group": "list",
+   "value": true,
+   "source": "htoprc hide_kernel_threads=1"
+  },
+  {
+   "name": "quit key",
+   "group": "controls",
+   "value": "F10 or q",
+   "source": "function bar string 0x48b99"
+  },
+  {
+   "name": "error exit code",
+   "group": "cli",
+   "value": 1,
+   "source": "CommandLine_run 0x1d310 (var_2b0 = 1), observed"
+  },
+  {
+   "name": "PRI and NI on Windows",
+   "group": "platform",
+   "value": "-",
+   "estimated": true
+  },
+  {
+   "name": "memory cache off Linux",
+   "group": "platform",
+   "value": "available minus free",
+   "estimated": true
+  },
+  {
+   "name": "kbytes unit loop while at least",
+   "group": "format",
+   "value": 1000000,
+   "unit": "hundredths of MiB",
+   "source": "Row_printKBytes 0x30b70 (Ghidra)"
+  },
+  {
+   "name": "real-time priority at or below",
+   "group": "format",
+   "value": -100,
+   "source": "Process_writeField 0x2c3e0 (Ghidra)"
+  },
+  {
+   "name": "unknown size text",
+   "group": "format",
+   "value": "  N/A ",
+   "source": "Row_printKBytes 0x30b70 (Ghidra)"
+  },
+  {
+   "name": "state letters",
+   "group": "format",
+   "value": "?URQWDBPTtZXIS",
+   "source": "table 0x4db18 used by Process_writeField 0x2c3e0"
+  },
+  {
+   "name": "memory used formula",
+   "group": "meters",
+   "value": "total - (free + buffers + cached + sreclaimable)",
+   "source": "Machine_scan 0x41bc0 (Ghidra)"
+  },
+  {
+   "name": "memory text",
+   "group": "meters",
+   "value": "used + shared + compressed / total",
+   "source": "MemoryMeter_updateValues 0x293a0"
+  },
+  {
+   "name": "CPU meter percent cap",
+   "group": "meters",
+   "value": 100,
+   "unit": "%",
+   "source": "Platform_setCPUValues 0x3b5e0 (Ghidra)"
+  },
+  {
+   "name": "sort column exact match",
+   "group": "cli",
+   "value": true,
+   "source": "CommandLine_run 0x1d310 (strcmp)"
+  },
+  {
+   "name": "numeric user id accepted",
+   "group": "cli",
+   "value": true,
+   "source": "CommandLine_run 0x1d310 (Ghidra)"
+  },
+  {
+   "name": "setup keys",
+   "group": "controls",
+   "value": "F2, S, C",
+   "source": "Action_setBindings 0x15c90 (Ghidra)"
+  },
+  {
+   "name": "toggle branch keys",
+   "group": "controls",
+   "value": "+ - = Shift-F6",
+   "source": "Action_setBindings 0x15c90, 0x13c90, 0x189d0"
+  },
+  {
+   "name": "privileged process user colour",
+   "group": "platform",
+   "value": "not shown",
+   "estimated": true
+  }
+ ]
+}
